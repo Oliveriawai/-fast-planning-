@@ -1,14 +1,36 @@
-#简介
-底层使用的是fast-planner,在Ubuntu24.04_ROS2_JAZZY上正常运行，上层使用的是仿照airhunt的模拟语义+价值地图
-关于fast-planner，这里推荐观看B站UP主【个人移植，非docker，原生ROS2 Jazzy运行fast planner项目】 https://www.bilibili.com/video/BV1dpWEzXEU6/?share_source=copy_web&vd_source=ad4d7b3694a30637b89f3e68e0edcd41
-fast-planner项目地址https://gitee.com/lanlanlanbenben/fast_planner_2004
-airhunt相关论文：AirHunt: Bridging VLM Semantics and Continuous Planning for Efficient Aerial Object Navigation
-#作者相关的注释：
-目前是ROS2 foxy版本（最终编译用这三句）
+#  项目简介
+
+底层使用 **fast-planner**，在 **Ubuntu 24.04 + ROS2 JAZZY** 上正常运行。  
+上层使用的是仿照 **AirHunt** 的模拟语义 + 价值地图。
+
+---
+
+## 相关资源
+
+- **fast-planner 视频教程**（B站）：  
+  https://www.bilibili.com/video/BV1dpWEzXEU6/
+
+- **fast-planner 项目地址**（Gitee）：  
+  https://gitee.com/lanlanlanbenben/fast_planner_2004
+
+- **AirHunt 相关论文**：  
+  *AirHunt: Bridging VLM Semantics and Continuous Planning for Efficient Aerial Object Navigation*
+
+---
+
+## 编译与运行
+
+### 当前版本说明
+> 目前代码为 ROS2 **Foxy** 版本。
+
+### 编译命令
+```bash
 colcon build --symlink-install
 source install/setup.bash
 ros2 launch plan_manage single_run_in_sim.launch.py
-要注意的是，需要安装 （提前安装）
+> **注意：需要提前安装以下依赖**
+
+```bash
 sudo apt-get install ros-jazzy-tf2-geometry_msgs
 sudo apt-get install -y ros-jazzy-nav-msgs ros-jazzy-std-msgs ros-jazzy-geometry-msgs
 #一些在我编译时处理的问题：
